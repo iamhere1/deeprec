@@ -227,11 +227,9 @@ def main(argv):
                     predict_keys = "similarity")
         with open(args.result_dir + "/pred.txt", "w") as fo:
             for res in preds:
-                #fo.write("%f\n" % (res['prob']))
                 for score in res['similarity']:
                     fo.write(str(score) + " ")
                 fo.write('\n')
-                #fo.write(res['prob'])
     elif "export" == args.task_type:
         feature_spec = {}
         for i in range(args.feature_size):
